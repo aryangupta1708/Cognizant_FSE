@@ -16,5 +16,11 @@ public interface CountryService {
 
     List<Country> searchCountries(String name);
 
+    // Search by containing text in ascending order
+    List<Country> searchCountriesSorted(String name);
+
+    // Search by starting alphabet
+    List<Country> searchCountriesStartingWith(String alphabet);
+
     List<Country> getAllCountries();
 }

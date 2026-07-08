@@ -39,6 +39,16 @@ public class CountryController {
         return countryService.searchCountries(name);
     }
 
+    @GetMapping("/search/sorted/{name}")
+    public List<Country> searchCountriesSorted(@PathVariable String name) {
+        return countryService.searchCountriesSorted(name);
+    }
+
+    @GetMapping("/startswith/{alphabet}")
+    public List<Country> searchCountriesStartingWith(@PathVariable String alphabet) {
+        return countryService.searchCountriesStartingWith(alphabet);
+    }
+
     @GetMapping
     public List<Country> getAllCountries() {
         return countryService.getAllCountries();

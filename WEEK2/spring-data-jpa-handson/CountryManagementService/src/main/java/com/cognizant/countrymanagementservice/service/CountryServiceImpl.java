@@ -34,6 +34,16 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
+    public List<Country> searchCountriesSorted(String name) {
+        return countryRepository.findByNameContainingIgnoreCaseOrderByNameAsc(name);
+    }
+
+    @Override
+    public List<Country> searchCountriesStartingWith(String alphabet) {
+        return countryRepository.findByNameStartingWithIgnoreCase(alphabet);
+    }
+
+    @Override
     public List<Country> searchCountries(String name) {
         return countryRepository.findByNameContainingIgnoreCase(name);
     }
