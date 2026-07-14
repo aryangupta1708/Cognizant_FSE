@@ -31,7 +31,11 @@ public class OrmLearnApplication {
 //        testAddEmployee();
 //        testUpdateEmployee();
 //        testGetDepartment();
-        testAddSkillToEmployee();
+//        testAddSkillToEmployee();
+//        testGetAllPermanentEmployees();
+//        testGetAverageSalary();
+//        testGetAllEmployeesNative();
+        testGetPermanentEmployeesCriteria();
     }
 
     private static void testGetEmployee() {
@@ -114,6 +118,63 @@ public class OrmLearnApplication {
 
         System.out.println(employee);
         System.out.println(employee.getSkillList());
+    }
+    private static void testGetAllPermanentEmployees() {
+
+        System.out.println("Permanent Employees");
+
+        employeeService.getAllPermanentEmployees().forEach(employee -> {
+
+            System.out.println(employee);
+
+            System.out.println("Department : " + employee.getDepartment());
+
+            System.out.println("Skills : " + employee.getSkillList());
+
+            System.out.println("-----------------------------------");
+        });
+    }
+
+    private static void testGetAverageSalary() {
+
+        System.out.println("Average Salary");
+
+        double averageSalary = employeeService.getAverageSalary(1);
+
+        System.out.println("Average Salary of Department 1 : " + averageSalary);
+    }
+
+    private static void testGetAllEmployeesNative() {
+
+        System.out.println("All Employees (Native Query)");
+
+        employeeService.getAllEmployeesNative().forEach(employee -> {
+
+            System.out.println(employee);
+
+            System.out.println(employee.getDepartment());
+
+            System.out.println(employee.getSkillList());
+
+            System.out.println("--------------------------------");
+
+        });
+    }
+
+    private static void testGetPermanentEmployeesCriteria() {
+
+        System.out.println("Permanent Employees (Criteria Query)");
+
+        employeeService.getPermanentEmployeesCriteria().forEach(employee -> {
+
+            System.out.println(employee);
+
+            System.out.println(employee.getDepartment());
+
+            System.out.println(employee.getSkillList());
+
+            System.out.println("--------------------------------");
+        });
     }
 }
 
