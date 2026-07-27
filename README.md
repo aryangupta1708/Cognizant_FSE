@@ -74,3 +74,12 @@ WEEK5
     ├── bloggerapp
     └── cohorttracker
 ```
+```
+WEEK6
+│
+├── 1. Git-HOL
+├── 2. Git-HOL
+├── 3. Git-HOL
+├── 4. Git-HOL
+└── 5. Git-HOL
+```
